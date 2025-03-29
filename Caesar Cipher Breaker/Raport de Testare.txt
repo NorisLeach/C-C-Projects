@@ -1,0 +1,54 @@
+Raport de Testare
+
+Acest raport își propune să analizeze și să compare performanța a trei metode statistice utilizate pentru decriptarea automată a cifrului Caesar: Distanța Chi-Squared, Distanța Euclideană și Distanța Cosinus. Testarea acestor metode a fost realizată pe texte criptate de lungimi variabile și cu shifturi diferite, pentru a observa modul în care aceste variabile influențează acuratețea decriptării. Obiectivul principal este identificarea metodei optime în funcție de caracteristicile textului criptat.
+
+1. Generarea Textelor Criptate
+Au fost generate două categorii de texte:
+• Texte scurte: conținând între 10 și 20 de caractere (exemple: "abcdefg", "hello world").
+• Texte lungi: conținând peste 200 de caractere (extrase din cărți sau articole).
+Aceste texte au fost criptate folosind cifrul Caesar, aplicând shifturi aleatorii (de exemplu, shift = 5, shift = 13).
+
+2. Aplicarea Metodelor de Decriptare
+Textele criptate au fost decriptate utilizând trei metode:
+• Distanța Chi-Squared – compară frecvența literelor din textul criptat cu distribuția standard a literelor în limba engleză, evaluând diferențele statistice.
+• Distanța Euclideană – calculează distanța geometrică dintre vectorul frecvențelor literelor din text și cel al limbii engleze.
+• Distanța Cosinus – măsoară similaritatea dintre cele două distribuții prin evaluarea unghiului dintre vectorii acestora.
+
+3. Evaluarea Rezultatelor
+Pentru fiecare metodă, am analizat dacă aceasta a identificat corect shiftul aplicat și cum acuratețea decriptării a fost influențată de lungimea textului și distribuția literelor.
+Analiza Detaliată a Rezultatelor
+Pentru texte lungi, toate cele trei metode au reușit să identifice corect shiftul aplicat, indiferent de valoarea acestuia. Acest lucru se explică prin faptul că, la un volum mare de date, distribuția literelor din textul criptat tinde să se apropie de distribuția naturală a limbii engleze, facilitând analiza statistică.
+În cazul textelor scurte, performanța metodelor a variat considerabil:
+• La texte cu 10 caractere, toate metodele au eșuat frecvent, indiferent de shift, deoarece volumul redus de date nu permite obținerea unei distribuții relevante statistic.
+• Pentru texte între 15 și 20 de caractere, rezultatele au fost mixte. De exemplu, în unele cazuri Distanța Chi-Squared și Cosinus au identificat corect shiftul, în timp ce Distanța Euclideană a eșuat, și invers, în funcție de distribuția specifică a literelor în textul criptat.
+
+Distanța Chi-Squared
+Această metodă funcționează foarte bine pe texte lungi, întrucât se bazează pe compararea frecvenței literelor criptate cu distribuția standard a limbii engleze. Cu cât textul este mai lung, cu atât distribuția sa tinde să fie reprezentativă.
+Pe texte scurte, însă, metoda devine instabilă și poate oferi rezultate incorecte, mai ales dacă textul conține litere cu frecvențe neobișnuite (de exemplu, prea multe litere rare precum 'z' sau 'q').
+Exemplu pozitiv: textul "hello" criptat cu shift = 3 devine "khoor", iar Chi-Squared identifică corect shiftul.
+Limitare: Sensibilitate mare la volume mici de date și distribuții neuniforme.
+
+Distanța Euclideană
+Metoda Euclideană este mai robustă pe texte scurte, în special când distribuția literelor nu este uniformă. Fiind bazată pe distanța geometrică, este capabilă să sesizeze deviații chiar și atunci când datele sunt limitate.
+Totuși, aceasta poate eșua dacă textul scurt are o distribuție apropiată de cea uniformă, deoarece nu există suficiente diferențe statistice.
+Exemplu pozitiv: textul "world" criptat cu shift = 13 devine "jbeyq", iar metoda Euclideană identifică corect shiftul.
+Limitare: Mai puțin precisă pe texte foarte scurte sau cu distribuții uniforme.
+
+Distanța Cosinus
+Această metodă măsoară unghiul dintre vectorii distribuțiilor, fiind eficientă în special pe texte lungi și pe texte scurte cu distribuții echilibrate.
+În cazul textelor scurte cu distribuții neuniforme, metoda poate eșua deoarece nu are suficiente date pentru a calcula un unghi semnificativ.
+Exemplu pozitiv: textul "example" criptat cu shift = 5 devine "jcgrfqj", iar Cosinus identifică corect shiftul.
+Limitare: Ineficientă pe texte scurte cu frecvențe rare sau neuniforme.
+
+În urma testelor, concluziile sunt următoarele:
+• Pentru texte lungi (200+ caractere), toate metodele oferă rezultate corecte și pot fi utilizate cu încredere.
+• Pentru texte scurte (15-20 caractere):
+   – Dacă distribuția literelor este relativ uniformă, metodele Chi-Squared și Cosinus sunt mai eficiente.
+   – Dacă distribuția este neuniformă, metoda Euclideană poate fi mai robustă.
+• Pentru texte foarte scurte (sub 15 caractere), nicio metodă nu garantează succesul.
+Recomandarea generală este să fie utilizate texte cât mai lungi pentru decriptarea automată. În cazurile unde acest lucru nu este posibil, alegerea metodei trebuie făcută ținând cont de natura textului criptat.
+Exemple Practice
+• Text Criptat: "khoor" (shift = 3) → Text Decriptat: "hello" (toate metodele au identificat corect shiftul)
+• Text Criptat: "xuo" (shift = 10, text scurt) → Text Decriptat: "incorect" (toate metodele au eșuat datorită volumului redus de date)
+Observații Finale
+Testarea evidențiază că metodele bazate pe frecvență funcționează optim doar în prezența unor volume mari de date. Pentru texte scurte, este necesară aplicarea cu atenție a metodelor sau dezvoltarea unor tehnici hibride pentru îmbunătățirea acurateței decriptării.

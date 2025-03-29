@@ -1,0 +1,27 @@
+Caesar Cipher Breaker - Documentation
+
+	This C++ project is developed to break Caesar cipher-encrypted texts using frequency analysis. It uses different distance metrics (Chi-Squared, Euclidean, and Cosine) to compare the frequency histogram of the cipher text to the known English letter frequency distribution. A menu-driven console interface is provided for ease of use.
+
+Features
+1.	Read Letter Distribution: Reads letter frequency distribution from a file named 'distribution.txt'.
+2.	Compute Histogram: Computes the frequency histogram of a given input text.
+3.	Chi-Squared Distance Calculation: Calculates the Chi-Squared distance between the text's histogram and the standard English distribution.
+4.	Euclidean Distance Calculation: Computes the Euclidean distance between the text's histogram and the English distribution.
+5.	Cosine Distance Calculation: Calculates the Cosine distance metric for the same comparison.
+6.	Break Caesar Cipher: Attempts all possible Caesar cipher shifts and evaluates them based on the selected distance metric to identify the most likely original message.
+
+Menu Options
+Option	Functionality
+1	Read letter distribution
+2	Compute histogram
+3	Chi-Squared distance analysis
+4	Euclidean distance analysis
+5	Cosine distance analysis
+6	Break Caesar cipher (Chi-Squared)
+-1	Exit the program
+
+How to Use
+1.	Compile and run the program.
+2.	Enter the menu option number corresponding to the desired operation.
+3.	Provide necessary inputs as prompted.
+4.	To exit, enter '-1'.
