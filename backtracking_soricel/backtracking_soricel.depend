@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1674656066 source:c:\users\septi\desktop\backtracking_soricel\main.cpp
+	<iostream>
+	<fstream>
+	<iomanip>
+
