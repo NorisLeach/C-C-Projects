@@ -1,0 +1,23 @@
+﻿  DA.cpp
+C:\Users\septi\Desktop\seminary2\seminary2\DA.cpp(35,6): error C2027: use of undefined type 'Dynamic_Array'
+      C:\Users\septi\Desktop\seminary2\seminary2\DA.h(11,33):
+      see declaration of 'Dynamic_Array'
+  
+C:\Users\septi\Desktop\seminary2\seminary2\DA.cpp(35,23): error C2027: use of undefined type 'Dynamic_Array'
+      C:\Users\septi\Desktop\seminary2\seminary2\DA.h(11,33):
+      see declaration of 'Dynamic_Array'
+  
+C:\Users\septi\Desktop\seminary2\seminary2\DA.cpp(36,3): error C2027: use of undefined type 'Dynamic_Array'
+      C:\Users\septi\Desktop\seminary2\seminary2\DA.h(11,33):
+      see declaration of 'Dynamic_Array'
+  
+C:\Users\septi\Desktop\seminary2\seminary2\DA.cpp(37,2): error C2027: use of undefined type 'Dynamic_Array'
+      C:\Users\septi\Desktop\seminary2\seminary2\DA.h(11,33):
+      see declaration of 'Dynamic_Array'
+  
+C:\Users\septi\Desktop\seminary2\seminary2\DA.cpp(37,12): error C2027: use of undefined type 'Dynamic_Array'
+      C:\Users\septi\Desktop\seminary2\seminary2\DA.h(11,33):
+      see declaration of 'Dynamic_Array'
+  
+  seminary2.cpp
+  Generating Code...
